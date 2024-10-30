@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Flash Cards</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Language Flash Cards</h1>
+        <div class="language-selector">
+            <label for="frontLang">Front Language:</label>
+            <select id="frontLang">
+                <option value="english">English</option>
+                <option value="spanish" selected>Spanish</option>
+                <option value="italian">Italian</option>
+                <option value="german">German</option>
+            </select>
+            <label for="backLang">Back Language:</label>
+            <select id="backLang">
+                <option value="english" selected>English</option>
+                <option value="spanish">Spanish</option>
+                <option value="italian">Italian</option>
+                <option value="german">German</option>
+            </select>
+        </div>
+        <div class="card" id="flashcard">
+            <div class="card-inner">
+                <div class="card-front">
+                    <!-- Front language word will go here -->
+                </div>
+                <div class="card-back">
+                    <!-- Back language translation will go here -->
+                </div>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="prevBtn">Previous</button>
+            <button id="flipBtn">Flip Card</button>
+            <button id="nextBtn">Next</button>
+        </div>
+        <div class="progress">
+            <span id="currentCard">1</span>/<span id="totalCards">0</span>
+        </div>
+    </div>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
