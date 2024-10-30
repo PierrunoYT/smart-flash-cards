@@ -1,12 +1,10 @@
 import { words } from './words.js';
-import { TranslationService } from './translationService.js';
 
 class FlashCardApp {
     constructor() {
         this.cards = words;
         this.currentIndex = 0;
         this.isFlipped = false;
-        this.isLoading = false;
         
         // DOM elements
         this.flashcard = document.getElementById('flashcard');
@@ -64,13 +62,11 @@ class FlashCardApp {
     }
     
     flipCard() {
-        if (this.isLoading) return;
         this.isFlipped = !this.isFlipped;
         this.flashcard.classList.toggle('flipped');
     }
     
     previousCard() {
-        if (this.isLoading) return;
         if (this.currentIndex > 0) {
             this.currentIndex--;
             this.updateCard();
@@ -79,7 +75,6 @@ class FlashCardApp {
     }
     
     nextCard() {
-        if (this.isLoading) return;
         if (this.currentIndex < this.cards.length - 1) {
             this.currentIndex++;
             this.updateCard();
@@ -87,35 +82,14 @@ class FlashCardApp {
         }
     }
     
-    async updateCard() {
+    updateCard() {
         const currentCard = this.cards[this.currentIndex];
         if (currentCard) {
             const frontLang = this.frontLangSelect.value;
             const backLang = this.backLangSelect.value;
             
-            this.cardFront.textContent = currentCard[frontLang];
-            
-            // If we don't have the translation in our static data, use OpenRouter
-            if (!currentCard[backLang]) {
-                try {
-                    this.isLoading = true;
-                    this.cardBack.textContent = 'Loading translation...';
-                    const translation = await TranslationService.translate(
-                        currentCard[frontLang],
-                        frontLang,
-                        backLang
-                    );
-                    currentCard[backLang] = translation;
-                    this.cardBack.textContent = translation;
-                } catch (error) {
-                    this.cardBack.textContent = 'Translation failed. Please try again.';
-                    console.error('Translation error:', error);
-                } finally {
-                    this.isLoading = false;
-                }
-            } else {
-                this.cardBack.textContent = currentCard[backLang];
-            }
+            this.cardFront.textContent = currentCard[frontLang] || 'Translation not available';
+            this.cardBack.textContent = currentCard[backLang] || 'Translation not available';
             
             // Reset flip state when changing cards
             this.isFlipped = false;

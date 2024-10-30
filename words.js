@@ -13,5 +13,20 @@ export const words = [
     { spanish: "No", english: "No", italian: "No", german: "Nein" },
     { spanish: "Amor", english: "Love", italian: "Amore", german: "Liebe" },
     { spanish: "Familia", english: "Family", italian: "Famiglia", german: "Familie" },
-    { spanish: "Casa", english: "House", italian: "Casa", german: "Haus" }
+    { spanish: "Casa", english: "House", italian: "Casa", german: "Haus" },
+    { spanish: "Gato", english: "Cat", italian: "Gatto", german: "Katze" },
+    { spanish: "Perro", english: "Dog", italian: "Cane", german: "Hund" },
+    { spanish: "Amigo", english: "Friend", italian: "Amico", german: "Freund" },
+    { spanish: "Tiempo", english: "Time", italian: "Tempo", german: "Zeit" },
+    { spanish: "Dinero", english: "Money", italian: "Soldi", german: "Geld" },
+    { spanish: "Trabajo", english: "Work", italian: "Lavoro", german: "Arbeit" },
+    { spanish: "Libro", english: "Book", italian: "Libro", german: "Buch" },
+    { spanish: "Mesa", english: "Table", italian: "Tavolo", german: "Tisch" },
+    { spanish: "Coche", english: "Car", italian: "Macchina", german: "Auto" },
+    { spanish: "Pan", english: "Bread", italian: "Pane", german: "Brot" },
+    { spanish: "Leche", english: "Milk", italian: "Latte", german: "Milch" },
+    { spanish: "Sol", english: "Sun", italian: "Sole", german: "Sonne" },
+    { spanish: "Luna", english: "Moon", italian: "Luna", german: "Mond" },
+    { spanish: "Estrella", english: "Star", italian: "Stella", german: "Stern" },
+    { spanish: "Buenas tardes", english: "Good afternoon", italian: "Buon pomeriggio", german: "Guten Tag" }
 ];
